@@ -141,7 +141,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "tsc && nodemon dist/index"
+    "start": "tsc && nodemon dist/index",
+    "dev":"nodemon src/index.ts"
   },
   "author": "Yogesh Gaur",
   "license": "ISC",

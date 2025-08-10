@@ -14,13 +14,14 @@ const eventSchema = new Schema({
     required: true,
   },
   location: String,
-  capacity: String,
+  capacity: Number,
   price: String,
   createdBy: {
     type: Schema.Types.ObjectId,
     ref: "User",
   },
   createdAt: Date,
+  updatedAt: Date,
 });
 
 const Event = model("Event", eventSchema);
