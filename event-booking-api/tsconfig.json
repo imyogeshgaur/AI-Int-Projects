@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",        // where your source code lives
+    "outDir": "dist",        // where compiled JS should go
+    "module": "commonjs",    // or "esnext"
+    "target": "es2017",      // or your preferred target
+    "strict": true,          // enables all strict type-checking
+    "esModuleInterop": true  // allows default import from CommonJS
+  },
+  "include": ["src"],        // compile only files from src
+  "exclude": ["node_modules", "dist"]
+}
