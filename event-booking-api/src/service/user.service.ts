@@ -11,7 +11,7 @@ class UserService {
             from: "users",
             localField: "createdBy",
             foreignField: "_id",
-            as: "createdBy",
+            as: "creator",
           },
         },
       ]);

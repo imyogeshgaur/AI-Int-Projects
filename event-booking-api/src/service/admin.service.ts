@@ -6,18 +6,20 @@ class AdminService {
   async createEvent(eventData: EventType) {
     try {
       const createdAt = new Date();
-      if (Number(eventData.capacity) < 1)
-        return "Event Capacity is incorrect !!!"; //Handle negetive booking case
-      if (new Date().getTime() > new Date(eventData.date).getTime())
-        return "Please enter the future date !!!"; //Handle the future date case
-      const createdBy = new mongoose.Types.ObjectId(eventData.createdBy);
-      const event = await Event.create({
-        ...eventData,
-        capacity: Number(eventData.capacity),
-        createdAt,
-        createdBy,
-      });
-      await event.save();
+      console.log(eventData.capacity)
+      console.log(parseInt(eventData.capacity))
+      // if (Number(eventData.capacity) < 1)
+      //   return "Event Capacity is incorrect !!!"; //Handle negetive booking case
+      // if (new Date().getTime() > new Date(eventData.date).getTime())
+      //   return "Please enter the future date !!!"; //Handle the future date case
+      // const createdBy = new mongoose.Types.ObjectId(eventData.createdBy);
+      // const event = await Event.create({
+      //   ...eventData,
+      //   capacity: Number(eventData.capacity),
+      //   createdAt,
+      //   createdBy,
+      // });
+      // await event.save();
       return "Event created successfully!";
     } catch (error) {
       console.error("Error occurred in the createEvent Service: ", error);
