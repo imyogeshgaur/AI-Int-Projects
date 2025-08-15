@@ -168,3 +168,36 @@ describe("POST /login", () => {
   });
 });
 
+describe("POST /forgetPassword/:userId", () => {
+  it("User got forget password email", async () => {
+    const res = await request(app)
+      .post("/api/v1/user/forgetPassword/:userId")
+      .send({
+        userId: "689f0e96e6b30726caabfe5d",
+      });
+    expect(res.body.message).toContain("Email sent sucessfully !!");
+  });
+});
+
+describe("POST /resetPassword/:userId", () => {
+  it("User password reset sucessfully", async () => {
+    const res = await request(app)
+      .post("/api/v1/user/forgetPassword/:userId")
+      .send({
+        userId: "689f0e96e6b30726caabfe5d",
+        password: "Pass@123",
+        confirmPassword: "Pass@123",
+      });
+    expect(res.body).toContain("Password Reset Sucessfully !!!");
+  });
+  it("Password do not match", async () => {
+    const res = await request(app)
+      .post("/api/v1/user/forgetPassword/:userId")
+      .send({
+        userId: "689f0e96e6b30726caabfe5d",
+        password: "Pass@123",
+        confirmPassword: "Pass@1234",
+      });
+    expect(res.body).toContain("Password do not match !!!");
+  });
+});

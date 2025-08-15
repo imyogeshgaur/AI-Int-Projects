@@ -1,6 +1,5 @@
 import * as z from "zod";
 import { loginUserDTO, registerUserDTO } from "../types/AuthDTO";
-import { error } from "console";
 
 const registerValidations = z.object({
   name: z
@@ -67,6 +66,7 @@ const loginValidation = z.object({
     })
     .trim(),
 });
+
 export const validateUserAtRegistration = (data: registerUserDTO) => {
   try {
     const isParsed = registerValidations.parse(data);

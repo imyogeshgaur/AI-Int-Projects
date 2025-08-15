@@ -9,3 +9,8 @@ export type registerUserDTO = {
     password:string;
     currency?:string;
 }
+
+export type resetPasswordDTO = {
+    password:string;
+    confirmPassword:string;
+}
