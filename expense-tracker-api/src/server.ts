@@ -21,3 +21,5 @@ connectToDB();
 app.use("/api/v1/user",userRouter);
 
 app.listen(4000);
+
+export default app;
