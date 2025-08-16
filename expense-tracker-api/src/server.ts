@@ -2,6 +2,7 @@ import express,{urlencoded,json} from "express"
 import {rateLimit} from "express-rate-limit"
 import userRouter from "./routes/user.routes";
 import connectToDB from "./config/db.config";
+import expenseRoute from "./routes/expense.routes";
 const app = express();
 
 const limiter = rateLimit({
@@ -19,6 +20,7 @@ app.use(urlencoded({extended:true}));
 connectToDB();
 
 app.use("/api/v1/user",userRouter);
+app.use("/api/v1/expense",expenseRoute);
 
 app.listen(4000);
 
