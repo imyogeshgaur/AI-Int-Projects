@@ -13,7 +13,7 @@ export const authenticateUser = (
     }
 
     const token = authHeader.split(" ")[1];
-    jwt.verify(token, process.env.JWT_SECRET as string)
+    jwt.verify(token, process.env.JWT_SECRET as string);
 
     next();
   } catch (error) {

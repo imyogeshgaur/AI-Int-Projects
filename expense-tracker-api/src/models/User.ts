@@ -32,7 +32,7 @@ const UserSchema = new Schema<IUser>(
     },
     currency: {
       type: String,
-      default: "INR", 
+      default: "INR",
     },
   },
   { timestamps: true }

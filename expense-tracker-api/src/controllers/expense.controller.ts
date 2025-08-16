@@ -59,7 +59,7 @@ class ExpenseController {
         return this.res.status(200).send({ message: "No Expense Found" });
       return this.res.status(200).send({ expensesOfUser });
     } catch (error: any) {
-      console.log("Error occured in add expense service ", error);
+      console.log("Error occured in get all expense service ", error);
       throw new Error(error);
     }
   }
@@ -78,7 +78,7 @@ class ExpenseController {
         return this.res.status(200).send({ message: "No Expense Found" });
       return this.res.status(200).send({ filteredExpense });
     } catch (error: any) {
-      console.log("Error occured in add expense service ", error);
+      console.log("Error occured in filter expense service ", error);
       throw new Error(error);
     }
   }
